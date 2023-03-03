@@ -21,13 +21,6 @@ function VerCitas(){
     }, [])
 
 
-    const postDelete = (id,e) =>{
-        e.preventDefault();
-        axios.delete(`https://evident-gecko-378415.uc.r.appspot.com/citas${id}`)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-
-    }
 
     const arr = data.map((data, index)=>{
         return(
@@ -37,7 +30,6 @@ function VerCitas(){
                 <td>{data.servicioRequerido}</td>
                 <td>{data.fecha}</td>
                 <td>{data.hora}</td>
-                <td><button onClick={(e) => postDelete(data.id, e)} type="button" class="btn btn-outline-danger btn-sm">Eliminar</button></td>
             </tr>
         );
     })
